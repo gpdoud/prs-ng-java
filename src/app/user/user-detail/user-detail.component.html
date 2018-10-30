@@ -1,3 +1,15 @@
-<p>
-  user-detail works!
-</p>
+<div>
+  <div>
+    <span>User Detail</span>
+  </div>
+  <p *ngIf='!user'>Retrieving data ... this may take a while...</p>
+  <table class="table table-sm" *ngIf="user">
+    <tr><td>Id:</td><td>{{ user.Id }}</td></tr>
+    <tr><td>Name:</td><td>{{ user.FirstName }} {{ user.LastName }}</td></tr>
+    <tr><td>UserName:</td><td>{{ user.UserName }}</td></tr>
+    <tr><td>Phone:</td><td>{{ user.Phone }}</td></tr>
+    <tr><td>Email:</td><td>{{ user.Email }}</td></tr>
+    <tr><td>Reviewer?:</td><td>{{ user.IsReviewer ? "Yes" : "No" }}</td></tr>
+    <tr><td>Admin?:</td><td>{{ user.IsAdmin ? "Yes" : "No" }}</td></tr>
+  </table>
+</div>

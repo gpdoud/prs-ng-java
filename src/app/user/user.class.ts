@@ -11,6 +11,7 @@ export class User {
 
     constructor() {
         this.Id = 0;
+        this.Password = 'password';
         this.IsReviewer = false;
         this.IsAdmin = false;
     }

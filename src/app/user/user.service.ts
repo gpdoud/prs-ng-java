@@ -18,6 +18,15 @@ export class UserService {
   get(id): Observable<JsonResponse> {
     return this.http.get(url + 'get/' + id) as Observable<JsonResponse>;
   }
+  add(user: User): Observable<JsonResponse> {
+    return this.http.post(url + "create", user) as Observable<JsonResponse>;
+  }
+  change(user: User): Observable<JsonResponse> {
+    return this.http.post(url + "change", user) as Observable<JsonResponse>;
+  }
+  remove(user: User): Observable<JsonResponse> {
+    return this.http.post(url + "remove", user) as Observable<JsonResponse>;
+  }
 
   constructor(private http: HttpClient) { }
 }
