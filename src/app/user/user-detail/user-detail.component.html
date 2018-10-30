@@ -12,4 +12,7 @@
     <tr><td>Reviewer?:</td><td>{{ user.IsReviewer ? "Yes" : "No" }}</td></tr>
     <tr><td>Admin?:</td><td>{{ user.IsAdmin ? "Yes" : "No" }}</td></tr>
   </table>
+  <div>
+    <button class="btn btn-danger" (click)="delete()">Delete</button>
+  </div>
 </div>
