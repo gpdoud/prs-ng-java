@@ -1,9 +1,9 @@
-<div>
+<div class="component">
   <div>
     <span>User Detail</span>
   </div>
   <p *ngIf='!user'>Retrieving data ... this may take a while...</p>
-  <table class="table table-sm" *ngIf="user">
+  <table class="table table-sm form-smaller" *ngIf="user">
     <tr><td>Id:</td><td>{{ user.Id }}</td></tr>
     <tr><td>Name:</td><td>{{ user.Firstanme }} {{ user.Lastname }}</td></tr>
     <tr><td>UserName:</td><td>{{ user.Username }}</td></tr>

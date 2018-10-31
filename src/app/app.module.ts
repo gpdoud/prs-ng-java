@@ -17,6 +17,7 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { BoolDisplayPipe } from './pipes/bool-display.pipe';
+import { SortUsersPipe } from './pipes/sort-users.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BoolDisplayPipe } from './pipes/bool-display.pipe';
     VendorDetailComponent,
     VendorCreateComponent,
     VendorEditComponent,
-    BoolDisplayPipe
+    BoolDisplayPipe,
+    SortUsersPipe
   ],
   imports: [
     BrowserModule,

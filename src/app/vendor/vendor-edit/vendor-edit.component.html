@@ -1,3 +1,117 @@
-<p>
-  vendor-edit works!
-</p>
+<div class="component">
+  <div>
+    <span class="page-title">Vendor Edit</span>
+  </div>
+
+  <div class="container form" *ngIf="vendor">
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Code:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.Code" class="form-control" type="text" name="code"
+          #code="ngModel" required maxlength="10">
+      </div>
+      <div *ngIf="code.invalid && code.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="code?.errors.required">Required</label>
+        <label *ngIf="code?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Name:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.Name" class="form-control" type="text" name="name"
+          #name="ngModel" required maxlength="30">
+      </div>
+      <div *ngIf="name.invalid && name.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="name?.errors.required">Required</label>
+        <label *ngIf="name?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Address:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.Address" class="form-control" type="text" name="address"
+          #address="ngModel" required maxlength="30">
+      </div>
+      <div *ngIf="address.invalid && address.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="address?.errors.required">Required</label>
+        <label *ngIf="address?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">City:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.City" class="form-control" type="text" name="city"
+          #city="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="city.invalid && city.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="city?.errors.required">Required</label>
+        <label *ngIf="city?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">State:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.State" class="form-control" type="text" name="state"
+          #state="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="state.invalid && state.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="state?.errors.required">Required</label>
+        <label *ngIf="state?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Zip:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.Zip" class="form-control" type="text" name="zip"
+          #zip="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="zip.invalid && zip.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="zip?.errors.required">Required</label>
+        <label *ngIf="zip?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+        
+    
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Phone:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.Phone" class="form-control" type="text" name="phone"
+        #phone="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="phone.invalid && phone.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="phone?.errors.required">Required</label>
+        <label *ngIf="phone?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Email:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.Email" class="form-control" type="text" name="email"
+        #email="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="email.invalid && email.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="email?.errors.required">Required</label>
+        <label *ngIf="email?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">IsPreapproved:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="vendor.IsPreapproved" class="form-control" type="checkbox" 
+          name="IsPreapproved" #ispreapproved="ngModel">
+      </div>
+    </div>
+    
+    <div>
+      <button class="btn btn-primary" (click)="save()">Save</button>
+    </div>
+  </div>
+</div>
