@@ -1,0 +1,81 @@
+<div class="component">
+    <div>
+      <span class="page-title">Product Edit</span>
+    </div>
+  
+    <div class="container form" *ngIf="product">
+  
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">PartNumber:</label>
+        <div class="col-sm-8">
+          <input [(ngModel)]="product.PartNumber" class="form-control" type="text" name="partnumber"
+            #partnumber="ngModel" required maxlength="10">
+        </div>
+        <div *ngIf="partnumber.invalid && partnumber.touched" class="col-form-label col-sm-2 text-danger">
+          <label *ngIf="partnumber?.errors.required">Required</label>
+          <label *ngIf="partnumber?.errors.minlength">8 chars min</label>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">Name:</label>
+        <div class="col-sm-8">
+          <input [(ngModel)]="product.Name" class="form-control" type="text" name="name"
+            #name="ngModel" required maxlength="30">
+        </div>
+        <div *ngIf="name.invalid && name.touched" class="col-form-label col-sm-2 text-danger">
+          <label *ngIf="name?.errors.required">Required</label>
+          <label *ngIf="name?.errors.minlength">8 chars min</label>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">Price:</label>
+        <div class="col-sm-8">
+          <input [(ngModel)]="product.Price" class="form-control" type="number" name="price"
+            #price="ngModel" required maxlength="30">
+        </div>
+        <div *ngIf="price.invalid && price.touched" class="col-form-label col-sm-2 text-danger">
+          <label *ngIf="price?.errors.required">Required</label>
+          <label *ngIf="price?.errors.minlength">8 chars min</label>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">Unit:</label>
+        <div class="col-sm-8">
+          <input [(ngModel)]="product.Unit" class="form-control" type="text" name="unit"
+            #unit="ngModel" required minlength="8">
+        </div>
+        <div *ngIf="unit.invalid && unit.touched" class="col-form-label col-sm-2 text-danger">
+          <label *ngIf="unit?.errors.required">Required</label>
+          <label *ngIf="unit?.errors.minlength">8 chars min</label>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">PhotoPath:</label>
+        <div class="col-sm-8">
+          <input [(ngModel)]="product.PhotoPath" class="form-control" type="text" name="photopath"
+            #photopath="ngModel" required minlength="8">
+        </div>
+        <div *ngIf="photopath.invalid && photopath.touched" class="col-form-label col-sm-2 text-danger">
+          <label *ngIf="photopath?.errors.required">Required</label>
+          <label *ngIf="photopath?.errors.minlength">8 chars min</label>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">Vendor:</label>
+        <div class="col-sm-8">
+          <select [(ngModel)]="product.VendorId" class="form-control" name="zip">
+            <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id">{{ vendor.Name }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-primary" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>

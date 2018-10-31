@@ -1,0 +1,35 @@
+<div class="component">
+    <div>
+      <span>Product List</span>
+      | <a routerLink='/products/create'>Create New</a>
+    </div>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>PartNumber</td>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Unit</td>
+          <td>PhotoPath</td>
+          <td>Vendor</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let product of products'>
+          <td>{{ product.Id }}</td>
+          <td>{{ product.PartNumber }}</td>
+          <td>{{ product.Name }}</td>
+          <td>{{ product.Price | currency }}</td>
+          <td>{{ product.Unit }}</td>
+          <td>{{ product.PhotoPath }}</td>
+          <td>{{ product.Vendor.Name }}</td>
+          <td>
+            <a routerLink='/products/detail/{{product.Id}}'>Detail</a>
+            | <a routerLink='/products/edit/{{product.Id}}'>Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
