@@ -23,8 +23,8 @@
         <td>{{ user.Username }}</td>
         <td>{{ user.Phone }}</td>
         <td>{{ user.Email }}</td>
-        <td>{{ user.IsReviewer ? "Yes" : "No" }}</td>
-        <td>{{ user.IsAdmin ? "Yes" : "No" }}</td>
+        <td>{{ user.IsReviewer | bool }}</td>
+        <td>{{ user.IsAdmin | bool }}</td>
         <td>
           <a routerLink='/users/detail/{{user.Id}}'>Detail</a>
           | <a routerLink='/users/edit/{{user.Id}}'>Edit</a>
