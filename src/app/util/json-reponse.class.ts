@@ -1,5 +1,6 @@
 export class JsonResponse {
-    rc: number;
-    msg: string;
-    data: any;
+    Code: number;
+    Message: string;
+    Data: any;
+    Error: any;
 }

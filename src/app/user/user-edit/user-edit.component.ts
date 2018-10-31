@@ -32,7 +32,7 @@ export class UserEditComponent implements OnInit {
     this.usersvc.get(id)
       .subscribe(resp => {
         console.log("resp:", resp);
-        this.user = resp.data;
+        this.user = resp.Data;
       });
   }
 

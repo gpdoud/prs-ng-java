@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from './user.class';
 import { JsonResponse } from '../util/json-reponse.class';
 
-const url = 'http://localhost:5000/users/';
+const url = 'http://localhost:54401/api/Users/';
 
 @Injectable({
   providedIn: 'root'
@@ -13,19 +13,19 @@ const url = 'http://localhost:5000/users/';
 export class UserService {
 
   list(): Observable<JsonResponse> {
-    return this.http.get(url + 'list') as Observable<JsonResponse>;
+    return this.http.get(url + 'List') as Observable<JsonResponse>;
   }
   get(id): Observable<JsonResponse> {
-    return this.http.get(url + 'get/' + id) as Observable<JsonResponse>;
+    return this.http.get(url + 'Get/' + id) as Observable<JsonResponse>;
   }
   add(user: User): Observable<JsonResponse> {
-    return this.http.post(url + "create", user) as Observable<JsonResponse>;
+    return this.http.post(url + "Create", user) as Observable<JsonResponse>;
   }
   change(user: User): Observable<JsonResponse> {
-    return this.http.post(url + "change", user) as Observable<JsonResponse>;
+    return this.http.post(url + "Change", user) as Observable<JsonResponse>;
   }
   remove(user: User): Observable<JsonResponse> {
-    return this.http.post(url + "remove", user) as Observable<JsonResponse>;
+    return this.http.post(url + "Remove", user) as Observable<JsonResponse>;
   }
 
   constructor(private http: HttpClient) { }

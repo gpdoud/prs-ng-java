@@ -8,7 +8,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2">Username:</label>
       <div class="col-sm-8">
-        <input [(ngModel)]="user.UserName" class="form-control" type="text" name="username"
+        <input [(ngModel)]="user.Username" class="form-control" type="text" name="username"
           #username="ngModel" required minlength="8">
       </div>
       <div *ngIf="username.invalid && username.touched" class="col-form-label col-sm-2 text-danger">
@@ -20,7 +20,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2">First name:</label>
       <div class="col-sm-8">
-        <input [(ngModel)]="user.FirstName" class="form-control" type="text" name="firstname"
+        <input [(ngModel)]="user.Firstname" class="form-control" type="text" name="firstname"
           #firstname="ngModel" required minlength="8">
       </div>
       <div *ngIf="firstname.invalid && firstname.touched" class="col-form-label col-sm-2 text-danger">
@@ -32,7 +32,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2">Last name:</label>
       <div class="col-sm-8">
-        <input [(ngModel)]="user.LastName" class="form-control" type="text" name="lastname"
+        <input [(ngModel)]="user.Lastname" class="form-control" type="text" name="lastname"
           #lastname="ngModel" required minlength="8">
       </div>
       <div *ngIf="lastname.invalid && lastname.touched" class="col-form-label col-sm-2 text-danger">

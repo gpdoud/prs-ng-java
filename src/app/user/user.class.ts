@@ -1,9 +1,9 @@
 export class User {
     Id: number;
-    UserName: string;
+    Username: string;
     Password: string;
-    FirstName: string;
-    LastName: string;
+    Firstname: string;
+    Lastname: string;
     Phone: string;
     Email: string;
     IsReviewer: boolean;
