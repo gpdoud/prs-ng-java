@@ -1,3 +1,34 @@
-<p>
-  request-list works!
-</p>
+<div class="component">
+  <div>
+    <span>Product List</span>
+    | <a routerLink='/requests/create'>Create New</a>
+  </div>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Description</td>
+        <td>Justification</td>
+        <td>Status</td>
+        <td>Total</td>
+        <td>User</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let request of requests'>
+        <td>{{ request.Id }}</td>
+        <td>{{ request.Description }}</td>
+        <td>{{ request.Justification }}</td>
+        <td>{{ request.Status }}</td>
+        <td>{{ request.Total | currency }}</td>
+        <td>{{ request.User.Lastname }}</td>
+        <td>
+          <a routerLink='/requests/detail/{{request.Id}}'>Detail</a>
+          | <a routerLink='/requests/edit/{{request.Id}}'>Edit</a>
+          | <a routerLink='/requests/lines/{{request.Id}}'>Lines</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

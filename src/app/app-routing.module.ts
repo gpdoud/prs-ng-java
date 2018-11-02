@@ -6,10 +6,15 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
+import { ReqlineDetailComponent } from './reqlines/reqline-detail/reqline-detail.component';
+import { ReqlineEditComponent } from './reqlines/reqline-edit/reqline-edit.component';
+import { ReqlineCreateComponent } from './reqlines/reqline-create/reqline-create.component';
+
 import { RequestListComponent } from './request/request-list/request-list.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
@@ -32,10 +37,15 @@ const routes: Routes = [
   { path: 'products/detail/:id', component: ProductDetailComponent },
   { path: 'products/edit/:id', component: ProductEditComponent },
 
+  { path: 'reqlines/create/:prid', component: ReqlineCreateComponent },
+  { path: 'reqlines/detail/:id', component: ReqlineDetailComponent },
+  { path: 'reqlines/edit/:id', component: ReqlineEditComponent },
+
   { path: 'requests/list', component: RequestListComponent },
   { path: 'requests/create', component: RequestCreateComponent },
   { path: 'requests/detail/:id', component: RequestDetailComponent },
   { path: 'requests/edit/:id', component: RequestEditComponent },
+  { path: 'requests/lines/:id', component: RequestLinesComponent },
 
   { path: 'users/list', component: UserListComponent },
   { path: 'users/create', component: UserCreateComponent },

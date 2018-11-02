@@ -1,3 +1,22 @@
-<p>
-  request-detail works!
-</p>
+<div class="component">
+  <div>
+    <span>Request Detail</span>
+  </div>
+  <p *ngIf='!request'>Retrieving data ... this may take a while...</p>
+  <div *ngIf="request">
+    <table class="table table-sm form-smaller">
+      <tr><td>Id:</td><td>{{ request.Id }}</td></tr>
+      <tr><td>Description:</td><td>{{ request.Description }}</td></tr>
+      <tr><td>Justification:</td><td>{{ request.Justification }}</td></tr>
+      <tr *ngIf="request.RejectionReason"><td>RejectionReason:</td><td>{{ request.RejectionReason }}</td></tr>
+      <tr><td>DeliveryMode</td><td>{{ request.DeliveryMode }}</td></tr>
+      <tr><td>SubmittedDate</td><td>{{ request.SubmittedDate | date }}</td></tr>
+      <tr><td>Status:</td><td>{{ request.Status }}</td></tr>
+      <tr><td>Total:</td><td>{{ request.Total | currency }}</td></tr>
+    </table>
+    <div>
+      <a routerLink="/requests/edit/{{request.Id}}" class="btn btn-warning">Edit</a>
+      | <button class="btn btn-danger" (click)="delete()">Delete</button>
+    </div>
+  </div>
+</div>

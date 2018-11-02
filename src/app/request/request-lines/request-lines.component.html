@@ -1,0 +1,50 @@
+<div class="component">
+  <div>
+    <span>Product List</span>
+    | <a *ngIf="request" routerLink='/reqlines/create/{{ request.Id }}'>Create New</a>
+  </div>
+  <div *ngIf="request">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Description</td>
+          <td>Status</td>
+          <td>Total</td>
+          <td>User</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ request.Id }}</td>
+          <td>{{ request.Description }}</td>
+          <td>{{ request.Status }}</td>
+          <td>{{ request.Total | currency }}</td>
+          <td>{{ request.User.Lastname }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <td>Product</td>
+          <td>Quantity</td>
+          <td>Subtotal</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reqline of request.Reqlines">
+          <td>{{ reqline.Product.Name }}</td>
+          <td>{{ reqline.Quantity }}</td>
+          <td>{{ reqline.Product.Price * reqline.Quantity | currency  }}</td>
+          <td>
+            <a routerLink='/reqlines/detail/{{reqline.Id}}'>Detail</a>
+            | <a routerLink='/reqlines/edit/{{reqline.Id}}'>Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

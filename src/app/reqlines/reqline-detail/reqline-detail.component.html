@@ -1,0 +1,19 @@
+<div class="component">
+  <div>
+    <span>Request Line Detail</span>
+  </div>
+  <p *ngIf='!reqline'>Retrieving data ... this may take a while...</p>
+  <div *ngIf="reqline">
+    <table class="table table-sm form-smaller">
+      <tr><td>Id:</td><td>{{ reqline.Id }}</td></tr>
+      <tr><td>Product:</td><td>{{ reqline.Product.Name }}</td></tr>
+      <tr><td>Quantity</td><td>{{ reqline.Quantity }}</td></tr>
+      <tr><td>Subtotal</td><td>{{ reqline.Product.Price * reqline.Quantity | currency }}</td></tr>
+    </table>
+    <div>
+      <a routerLink="/reqlines/edit/{{reqline.Id}}" class="btn btn-warning">Edit</a>
+      | <button class="btn btn-danger" (click)="delete()">Delete</button>
+      | <a routerLink="/requests/lines/{{reqline.RequestId}}">Return to Request lines</a>
+    </div>
+  </div>
+</div>

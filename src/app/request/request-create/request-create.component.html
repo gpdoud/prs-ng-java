@@ -1,3 +1,113 @@
-<p>
-  request-create works!
-</p>
+<div class="component">
+  <div>
+    <span class="page-title">Request Create</span>
+  </div>
+
+  <div class="container form" *ngIf="request">
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Description:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="request.Description" class="form-control" type="text" name="description"
+          #description="ngModel" required maxlength="255">
+      </div>
+      <div *ngIf="description.invalid && description.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="description?.errors.required">Required</label>
+        <label *ngIf="description?.errors.minlength">255 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Justification:</label>
+      <div class="col-sm-8">
+        <textarea rows="3" [(ngModel)]="request.Justification" class="form-control" type="text" name="justification"
+          #justification="ngModel" maxlength="255"></textarea>
+      </div>
+      <div *ngIf="justification.invalid && justification.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="justification?.errors.required">Required</label>
+        <label *ngIf="justification?.errors.minlength">255 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">RejectionReason:</label>
+      <div class="col-sm-8">
+        <textarea rows="3" [(ngModel)]="request.RejectionReason" class="form-control" type="text" name="rejectionreason"
+          #rejectionreason="ngModel" maxlength="255"></textarea>
+      </div>
+      <div *ngIf="rejectionreason.invalid && rejectionreason.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="rejectionreason?.errors.required">Required</label>
+        <label *ngIf="rejectionreason?.errors.minlength">255 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">DeliveryMode:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="request.DeliveryMode" class="form-control" type="text" name="deliverymode"
+          #deliverymode="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="deliverymode.invalid && deliverymode.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="deliverymode?.errors.required">Required</label>
+        <label *ngIf="deliverymode?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">SubmittedDate:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="request.SubmittedDate" class="form-control" type="text" name="submitteddate"
+          #submitteddate="ngModel" required minlength="8">
+      </div>
+      <div *ngIf="submitteddate.invalid && submitteddate.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="submitteddate?.errors.required">Required</label>
+        <label *ngIf="submitteddate?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Status:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="request.Status" class="form-control" type="text" name="status"
+          #status="ngModel" disabled required minlength="8">
+      </div>
+      <div *ngIf="status.invalid && status.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="status?.errors.required">Required</label>
+        <label *ngIf="status?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Total:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="request.Total" class="form-control" type="number" step=".01" name="total"
+          #total="ngModel" disabled>
+      </div>
+      <div *ngIf="total.invalid && total.touched" class="col-form-label col-sm-2 text-danger">
+        <label *ngIf="total?.errors.required">Required</label>
+        <label *ngIf="total?.errors.minlength">8 chars min</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">User:</label>
+      <div class="col-sm-8">
+        <select [(ngModel)]="request.UserId" class="form-control" name="userid" disabled>
+          <option *ngFor="let user of users" [ngValue]="user.Id">{{ user.Lastname }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2">Active:</label>
+      <div class="col-sm-8">
+        <input [(ngModel)]="request.Active" class="form-control" type="checkbox" name="active"
+          #active="ngModel" readonly>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" (click)="save()">Save</button>
+    </div>
+  </div>
+</div>

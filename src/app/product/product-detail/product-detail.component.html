@@ -3,16 +3,19 @@
       <span>Product Detail</span>
     </div>
     <p *ngIf='!product'>Retrieving data ... this may take a while...</p>
-    <table class="table table-sm form-smaller" *ngIf="product">
-      <tr><td>Id:</td><td>{{ product.Id }}</td></tr>
-      <tr><td>PartNumber:</td><td>{{ product.PartNumber }}</td></tr>
-      <tr><td>Name:</td><td>{{ product.Name }}</td></tr>
-      <tr><td>Price:</td><td>{{ product.Price | currency }}</td></tr>
-      <tr><td>Unit:</td><td>{{ product.Unit }}</td></tr>
-      <tr *ngIf="product.PhotoPath"><td>PhotoPath:</td><td>{{ product.PhotoPath }}</td></tr>
-      <tr><td>Vendor:</td><td>{{ product.Vendor.Name }}</td></tr>
-    </table>
-    <div>
-      <button class="btn btn-danger" (click)="delete()">Delete</button>
-    </div>
+    <div *ngIf="product">
+      <table class="table table-sm form-smaller">
+        <tr><td>Id:</td><td>{{ product.Id }}</td></tr>
+        <tr><td>PartNumber:</td><td>{{ product.PartNumber }}</td></tr>
+        <tr><td>Name:</td><td>{{ product.Name }}</td></tr>
+        <tr><td>Price:</td><td>{{ product.Price | currency }}</td></tr>
+        <tr><td>Unit:</td><td>{{ product.Unit }}</td></tr>
+        <tr *ngIf="product.PhotoPath"><td>PhotoPath:</td><td>{{ product.PhotoPath }}</td></tr>
+        <tr><td>Vendor:</td><td>{{ product.Vendor.Name }}</td></tr>
+      </table>
+      <div>
+        <a routerLink="/products/edit/{{product.Id}}" class="btn btn-warning">Edit</a>
+        | <button class="btn btn-danger" (click)="delete()">Delete</button>
+      </div>
+      </div>
   </div>
