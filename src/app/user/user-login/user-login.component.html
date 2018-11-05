@@ -1,0 +1,29 @@
+<div class="component">
+  <div *ngIf='user' class='form-login'>
+    <div>
+      <span>User Login</span>
+    </div>
+    <table class="table table-borderless">
+      <tr>
+        <td>Username:</td>
+        <td>
+          <input [(ngModel)]='user.Username' class='form-control' type="text" 
+            name='username' #username='ngModel'>
+        </td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td>
+          <input [(ngModel)]='user.Password' class='form-control' type="password" 
+            name='password' #password='ngModel'>
+          </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="login()" class="btn btn-primary">Login</button>
+          <span class='error-msg'> {{ msg }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { SystemService } from '../system/system.service';
 import { Reqline } from './reqline.class';
 import { JsonResponse } from '../util/json-reponse.class';
 
@@ -28,5 +29,8 @@ export class ReqlineService {
     return this.http.post(url + "Remove", reqline) as Observable<JsonResponse>;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(    
+    private sys: SystemService,
+    private http: HttpClient
+  ) { }
 }

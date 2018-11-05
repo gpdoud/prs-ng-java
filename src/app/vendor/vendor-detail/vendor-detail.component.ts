@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
 
@@ -22,6 +23,7 @@ export class VendorDetailComponent implements OnInit {
   }
 
   constructor(
+    private sys: SystemService,
     private vendorsvc: VendorService, 
     private route: ActivatedRoute,
     private router: Router

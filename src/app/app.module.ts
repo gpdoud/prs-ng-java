@@ -30,6 +30,7 @@ import { ReqlineDetailComponent } from './reqlines/reqline-detail/reqline-detail
 import { ReqlineEditComponent } from './reqlines/reqline-edit/reqline-edit.component';
 import { ReqlineCreateComponent } from './reqlines/reqline-create/reqline-create.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { RequestLinesComponent } from './request/request-lines/request-lines.com
     ReqlineDetailComponent,
     ReqlineEditComponent,
     ReqlineCreateComponent,
-    RequestLinesComponent
+    RequestLinesComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

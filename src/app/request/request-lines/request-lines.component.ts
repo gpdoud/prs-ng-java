@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 
@@ -14,6 +15,7 @@ export class RequestLinesComponent implements OnInit {
   request: Request;
 
   constructor(
+    private sys: SystemService,
     private requestsvc: RequestService,
     private route: ActivatedRoute
   ) { }

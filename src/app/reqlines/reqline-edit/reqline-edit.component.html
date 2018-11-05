@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="component">
   <div>
     <span class="page-title">Request Edit</span>
@@ -37,7 +38,7 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2">Subtotal:</label>
         <div class="col-sm-8">
-          <input [ngModel]="reqline.Product.Price * reqline.Quantity" class="form-control" type="number" step=".01" name="quantity"
+          <input [ngModel]="(reqline.Product.Price * reqline.Quantity).toFixed(2)" class="form-control" type="number" step=".01" name="quantity"
             #quantity="ngModel" disabled >
         </div>
     </div>

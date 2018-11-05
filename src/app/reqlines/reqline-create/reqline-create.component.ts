@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { ReqlineService } from '../reqline.service';
 import { Reqline } from '../reqline.class';
 import { ProductService } from '../../product/product.service';
@@ -18,6 +19,7 @@ export class ReqlineCreateComponent implements OnInit {
   products: Product[];
   
   save(): void {
+    this.reqline.RequestId = Number(this.prid);
     console.log("reqline:", this.reqline, ", route:", this.reqline.RequestId);
     this.reqlinesvc.create(this.reqline)
       .subscribe(resp => {
@@ -27,6 +29,7 @@ export class ReqlineCreateComponent implements OnInit {
   }
 
   constructor(
+    private sys: SystemService,
     private reqlinesvc: ReqlineService,
     private productsvc: ProductService,
     private route: ActivatedRoute,

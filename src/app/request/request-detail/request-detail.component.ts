@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 
@@ -22,6 +23,7 @@ export class RequestDetailComponent implements OnInit {
   }
 
   constructor(
+    private sys: SystemService,
     private requestsvc: RequestService, 
     private route: ActivatedRoute,
     private router: Router

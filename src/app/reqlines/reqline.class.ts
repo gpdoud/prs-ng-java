@@ -15,6 +15,5 @@ export class Reqline {
         this.Id = 0;
         this.Active = true;
         this.Quantity = 1;
-        this.Product.Price = 0;
     }
 }

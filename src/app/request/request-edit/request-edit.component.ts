@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 import { UserService } from '../../user/user.service';
@@ -25,6 +26,7 @@ export class RequestEditComponent implements OnInit {
   }
 
   constructor(
+    private sys: SystemService,
     private requestsvc: RequestService,
     private usersvc: UserService,
     private route: ActivatedRoute,

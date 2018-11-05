@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { ReqlineService } from '../reqline.service';
 import { Reqline } from '../reqline.class';
 
@@ -22,6 +23,7 @@ export class ReqlineDetailComponent implements OnInit {
   }
 
   constructor(
+    private sys: SystemService,
     private reqlinesvc: ReqlineService, 
     private route: ActivatedRoute,
     private router: Router
