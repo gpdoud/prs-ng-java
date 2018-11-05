@@ -13,6 +13,12 @@ const url = 'http://localhost:54401/api/Requests/';
 })
 export class RequestService {
 
+  review(id): Observable<JsonResponse> {
+    return this.http.get(url + 'Review/' + id) as Observable<JsonResponse>;
+  }
+  reviews(userid): Observable<JsonResponse> {
+    return this.http.get(url + "Reviewlist/" + userid) as Observable<JsonResponse>;
+  }
   list(): Observable<JsonResponse> {
     return this.http.get(url + "List") as Observable<JsonResponse>;
   }

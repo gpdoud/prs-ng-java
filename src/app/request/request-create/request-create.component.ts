@@ -14,6 +14,7 @@ import { User } from '../../user/user.class'
 })
 export class RequestCreateComponent implements OnInit {
 
+  user: User = null;
   request: Request = new Request();
   users: User[];
 
@@ -33,16 +34,10 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.usersvc.list()
-      .subscribe(resp => {
-        console.log("Users:", resp);
-        this.users = resp.Data;
-        /*
-        ** Force a user into the request until login
-        */
-       console.warn("User forced into request");
-       this.request.UserId = this.users[0].Id;
-      });
+    if(!this.sys.isLoggedIn) {
+      this.router.navigateByUrl('/users/login');
+    }
+    this.request.UserId = this.sys.user.Id;
   }
 
 }

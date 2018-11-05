@@ -16,6 +16,9 @@
       <tr><td>Total:</td><td>{{ request.Total | currency }}</td></tr>
     </table>
     <div>
+      <span *ngIf='request.Status != "REVIEW" && request.Status != "APPROVED"'>
+        <button class="btn btn-success" (click)="review()">Review</button> |
+      </span>
       <a routerLink="/requests/edit/{{request.Id}}" class="btn btn-warning">Edit</a>
       | <button class="btn btn-danger" (click)="delete()">Delete</button>
     </div>

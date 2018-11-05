@@ -1,8 +1,7 @@
 <app-menu></app-menu>
 <div class="component">
   <div>
-    <span>Request List</span>
-    | <a routerLink='/requests/create'>Create New</a>
+    <span>Request Review</span>
   </div>
   <table class="table table-sm">
     <thead>
@@ -18,14 +17,12 @@
     <tbody>
       <tr *ngFor='let request of requests'>
         <td>{{ request.Id }}</td>
-        <td>{{ request.Description }}</td>
+        <td>{{ request.Justification }}</td>
         <td>{{ request.Status }}</td>
         <td>{{ request.Total | currency }}</td>
         <td>{{ request.User.Lastname }}</td>
         <td>
-          <a routerLink='/requests/detail/{{request.Id}}'>Detail</a>
-          | <a routerLink='/requests/edit/{{request.Id}}'>Edit</a>
-          | <a routerLink='/requests/lines/{{request.Id}}'>Lines</a>
+          <a routerLink='/requests/request-detail/{{request.Id}}'>Review</a>
         </td>
       </tr>
     </tbody>
