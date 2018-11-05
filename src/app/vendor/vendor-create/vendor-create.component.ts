@@ -29,6 +29,7 @@ export class VendorCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
   }
 
 }

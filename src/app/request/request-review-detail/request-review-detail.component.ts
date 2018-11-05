@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '../../system/system.service';
 
 @Component({
   selector: 'app-request-review-detail',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestReviewDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sys: SystemService
+  ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
   }
 
 }

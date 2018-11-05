@@ -37,8 +37,8 @@ export class UserLoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user.Username = '';
-    this.user.Password = '';
+    this.user.Username = 'sa';
+    this.user.Password = 'sa';
   }
 
 }

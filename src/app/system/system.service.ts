@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../user/user.class'
 
@@ -17,6 +18,14 @@ export class SystemService {
   clear(): void {
     this.user = null;
   }
+  checkForLogin() {
+    if(!this.isLoggedIn) {
+      console.warn("CheckForLogin()");
+      this.router.navigateByUrl("/users/login");
+    }
+  }
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 }

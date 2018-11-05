@@ -34,6 +34,7 @@ export class ProductEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
     let id = this.route.snapshot.params.id;
     this.productsvc.get(id)
       .subscribe(resp => {

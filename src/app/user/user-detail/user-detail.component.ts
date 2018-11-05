@@ -31,6 +31,7 @@ export class UserDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
     // gets the :id from the router
     let id = this.route.snapshot.params.id;
     // get the user from the user service

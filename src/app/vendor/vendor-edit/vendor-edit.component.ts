@@ -30,6 +30,7 @@ export class VendorEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
     let id = this.route.snapshot.params.id;
     this.vendorsvc.get(id)
       .subscribe(resp => {

@@ -10,17 +10,19 @@ import { User } from '../user.class';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
+  
   isAdmin: boolean = false;
   users: User[];
-
+  
   constructor(
     private sys: SystemService,
     private usersvc: UserService
-  ) { }
-
-  ngOnInit() {
-    this.usersvc.list()
+    ) { 
+    }
+    
+    ngOnInit() {
+      this.sys.checkForLogin();
+      this.usersvc.list()
       .subscribe(resp => {
         console.log("Users:", resp);
         this.users = resp.Data;

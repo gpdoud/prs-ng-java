@@ -20,6 +20,7 @@ export class RequestReviewListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
     let userid = (this.sys.isLoggedIn) ? this.sys.user.Id : 0;
     this.requestsvc.reviews(userid)
       .subscribe(resp => {

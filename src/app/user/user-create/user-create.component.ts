@@ -29,6 +29,7 @@ export class UserCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
   }
 
 }

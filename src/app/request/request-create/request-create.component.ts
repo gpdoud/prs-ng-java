@@ -34,9 +34,7 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(!this.sys.isLoggedIn) {
-      this.router.navigateByUrl('/users/login');
-    }
+    this.sys.checkForLogin();
     this.request.UserId = this.sys.user.Id;
   }
 
