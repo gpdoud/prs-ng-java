@@ -1,7 +1,14 @@
-<nav>
-  <ul>
-    <li *ngFor="let menu of menus">
-      <a routerLink='{{ menu.route }}' title="{{ menu.title }}">{{ menu.display }}</a>
-    </li>
-  </ul>
-</nav>
+<div>
+  <div class="sbs sbs-left">
+    <nav>
+      <ul>
+        <li *ngFor="let menu of menus">
+          <a routerLink='{{ menu.route }}' title="{{ menu.title }}">{{ menu.display }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="sbs sbs-right">
+    <span class="white-text">{{ name }}</span>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { User } from '../user.class';
 })
 export class UserDetailComponent implements OnInit {
 
+  isAdmin: boolean;
   user: User;
 
   delete(): void {
@@ -38,6 +39,7 @@ export class UserDetailComponent implements OnInit {
         console.log("resp: ", resp);
         this.user = resp.Data;
       });
+    this.isAdmin = (this.sys.user != null) ? this.sys.user.IsAdmin : false;
   }
 
 }

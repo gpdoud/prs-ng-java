@@ -19,3 +19,19 @@ a {
 a:hover {
     background-color: black;
 }
+.sbs {
+    display: inline-block;
+    background-color: #454545;
+}
+.sbs-left {
+    width: 70%;
+    text-align: left;
+}
+.sbs-right {
+    width: 30%;
+    text-align: right;
+}
+.white-text {
+    color: white;
+    margin-right: 5px;
+}

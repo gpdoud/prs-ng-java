@@ -11,6 +11,7 @@ import { User } from '../user.class';
 })
 export class UserListComponent implements OnInit {
 
+  isAdmin: boolean = false;
   users: User[];
 
   constructor(
@@ -24,6 +25,7 @@ export class UserListComponent implements OnInit {
         console.log("Users:", resp);
         this.users = resp.Data;
       });
+    this.isAdmin = (this.sys.user != null) ? this.sys.user.IsAdmin : false;
   }
 
 }

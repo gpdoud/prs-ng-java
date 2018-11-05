@@ -10,6 +10,7 @@ import { Vendor } from '../vendor.class';
 })
 export class VendorListComponent implements OnInit {
 
+  isAdmin: boolean;
   vendors: Vendor[];
 
   constructor(
@@ -23,6 +24,7 @@ export class VendorListComponent implements OnInit {
         console.log("Vendors:", resp);
         this.vendors = resp.Data;
       });
+    this.isAdmin = (this.sys.user != null) ? this.sys.user.IsAdmin : false;
   }
 
 }

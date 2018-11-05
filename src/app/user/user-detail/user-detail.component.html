@@ -14,9 +14,9 @@
       <tr><td>Reviewer?:</td><td>{{ user.IsReviewer ? "Yes" : "No" }}</td></tr>
       <tr><td>Admin?:</td><td>{{ user.IsAdmin ? "Yes" : "No" }}</td></tr>
     </table>
-    <div>
+    <div *ngIf='isAdmin'>
       <a class="btn btn-warning" routerLink="/users/edit/{{user.Id}}">Edit</a>
-      | <button class="btn btn-danger" (click)="delete()">Delete</button>
+       | <button class="btn btn-danger" (click)="delete()">Delete</button>
     </div>
   </div>
 </div>

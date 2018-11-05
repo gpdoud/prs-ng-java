@@ -12,6 +12,7 @@ import { Product } from '../product.class';
 })
 export class ProductDetailComponent implements OnInit {
 
+  isAdmin: boolean;
   product: Product;
 
   delete(): void {
@@ -38,6 +39,7 @@ export class ProductDetailComponent implements OnInit {
         console.log("resp: ", resp);
         this.product = resp.Data;
       });
-  }
+      this.isAdmin = (this.sys.user != null) ? this.sys.user.IsAdmin : false;
+    }
 
 }

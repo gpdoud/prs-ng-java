@@ -11,6 +11,7 @@ import { Product } from '../product.class';
 })
 export class ProductListComponent implements OnInit {
 
+  isAdmin: boolean
   products: Product[];
 
   constructor(
@@ -24,6 +25,7 @@ export class ProductListComponent implements OnInit {
         console.log("Products:", resp);
         this.products = resp.Data;
       });
+    this.isAdmin = (this.sys.user != null) ? this.sys.user.IsAdmin : false;
   }
 
 }

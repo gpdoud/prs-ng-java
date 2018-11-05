@@ -2,7 +2,7 @@
 <div class="component">
   <div>
     <span>Vendor List</span>
-    | <a routerLink='/vendors/create'>Create New</a>
+    <span *ngIf='isAdmin'>  <a routerLink='/vendors/create'>Create New</a></span>
   </div>
   <table class="table table-sm">
     <thead>
@@ -24,9 +24,9 @@
         <td>{{ vendor.Address }}, {{ vendor.City }}, {{ vendor.State }} {{ vendor.Zip }}</td>
         <td>{{ vendor.Phone }}</td>
         <td>{{ vendor.Email }}</td>
-        <td>
+        <td >
           <a routerLink='/vendors/detail/{{vendor.Id}}'>Detail</a>
-          | <a routerLink='/vendors/edit/{{vendor.Id}}'>Edit</a>
+          <span *ngIf='isAdmin'> | <a routerLink='/vendors/edit/{{vendor.Id}}'>Edit</a></span>
         </td>
       </tr>
     </tbody>

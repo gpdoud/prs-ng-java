@@ -14,7 +14,7 @@
         <tr *ngIf="product.PhotoPath"><td>PhotoPath:</td><td>{{ product.PhotoPath }}</td></tr>
         <tr><td>Vendor:</td><td>{{ product.Vendor.Name }}</td></tr>
       </table>
-      <div>
+      <div *ngIf='isAdmin'>
         <a routerLink="/products/edit/{{product.Id}}" class="btn btn-warning">Edit</a>
         | <button class="btn btn-danger" (click)="delete()">Delete</button>
       </div>

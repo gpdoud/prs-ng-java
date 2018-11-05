@@ -14,7 +14,7 @@
       <tr><td>Phone:</td><td>{{ vendor.Phone }}</td></tr>
       <tr><td>Email:</td><td>{{ vendor.Email }}</td></tr>
     </table>
-    <div>
+    <div *ngIf='isAdmin'>
       <a routerLink="/vendors/edit/{{vendor.Id}}" class="btn btn-warning">Edit</a>
       | <button class="btn btn-danger" (click)="delete()">Delete</button>
     </div>
