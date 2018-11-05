@@ -33,6 +33,7 @@ import { RequestLinesComponent } from './request/request-lines/request-lines.com
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 import { RequestReviewDetailComponent } from './request/request-review-detail/request-review-detail.component';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { RequestReviewDetailComponent } from './request/request-review-detail/re
     RequestLinesComponent,
     UserLoginComponent,
     RequestReviewListComponent,
-    RequestReviewDetailComponent
+    RequestReviewDetailComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

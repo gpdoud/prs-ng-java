@@ -7,18 +7,18 @@
   <table class="table table-sm" *ngIf="users">
     <thead>
       <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Username</td>
-        <td>Phone</td>
-        <td>Email</td>
-        <td>Reviewer?</td>
-        <td>Admin?</td>
-        <td>Action</td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("Id")'>Id</button></td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("Lastname")'>Name</button></td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("Username")'>Username</button></td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("Phone")'>Phone</button></td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("Email")'>Email</button></td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("IsReviewer")'>Reviewer?</button></td>
+        <td><button [ngClass]='colClasses' (click)='sortBy("IsAdmin")'>Admin?</button></td>
+        <td><button [ngClass]='colClasses' disabled>Active</button></td>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let user of users | sortUsers'>
+      <tr *ngFor='let user of users | sort:sortColumn:sortOrder'>
         <td>{{ user.Id }}</td>
         <td>{{ user.Firstname }} {{ user.Lastname }}</td>
         <td>{{ user.Username }}</td>

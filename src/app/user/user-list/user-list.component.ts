@@ -11,8 +11,19 @@ import { User } from '../user.class';
 })
 export class UserListComponent implements OnInit {
   
+  sortColumn: string = 'Lastname';
+  sortOrder: string = 'desc';
   isAdmin: boolean = false;
   users: User[];
+  colClasses = "btn btn-link font-weight-bold";
+
+  sortBy(col: string) {
+    if(this.sortColumn === col) {
+      this.sortOrder = (this.sortOrder === 'asc') ? 'desc' : 'asc';
+      console.log(`sortBy(${col}), order(${this.sortOrder})`);
+    }
+    this.sortColumn = col;
+  }
   
   constructor(
     private sys: SystemService,
